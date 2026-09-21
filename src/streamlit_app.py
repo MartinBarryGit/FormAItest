@@ -3,12 +3,22 @@ import glob
 from pathlib import Path
 
 from config import pages_path
-
+import time
+import subprocess 
 
 APP_ROOT = Path(__file__).resolve().parents[1]
 HEADER_IMAGE = APP_ROOT / "logos" / "—Pngtree—blue minimalistic smart technology background_1145450.jpg"
 logo_image = APP_ROOT / "logos" / "FormIA-removebg-preview.png"
+@st.cache_resource
+def start_ollama():
+    # Start Ollama server in background
+    subprocess.Popen(["ollama", "serve"])
+    time.sleep(3)  # Wait for server startup
+    # Pull desired model
+    subprocess.run(["ollama", "pull", "qwen3.5"], check=True)
 
+
+start_ollama()
 def render_branding():
 	st.markdown(
 		f"""
