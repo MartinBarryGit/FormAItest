@@ -4,3 +4,5 @@ pkg-config
 libpango1.0-dev
 libcairo2-dev
 libffi-dev
+libgl1
+libglib2.0-0
