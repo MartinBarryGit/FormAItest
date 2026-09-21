@@ -6,3 +6,7 @@ libcairo2-dev
 libffi-dev
 libgl1
 libglib2.0-0
+texlive-latex-base
+texlive-latex-extra
+texlive-fonts-recommended
+dvisvgm
